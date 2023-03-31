@@ -12,7 +12,7 @@
 }
 
 body {
-    height: 100vh;
+    height: calc(100vh);
     background: linear-gradient(to top,
             rgba(218, 219, 211, 1) 85%,
             rgba(0, 150, 136, 1) 15%);
@@ -21,9 +21,6 @@ body {
 /* #endregion COMMON and Utilities */
 
 /* #region MAIN */
-
-
-
 
 /* #region DEBUG */
 .debug .container {
