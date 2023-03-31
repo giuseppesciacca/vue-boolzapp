@@ -40,6 +40,34 @@ footer i {
     scale: 1.5;
 }
 
+/* #endregion COMMON and Utilities */
+
+/* #region CONTACT_SECTION */
+#contact_section>.col-4 {
+    border: 1px solid var(--my_secondary);
+}
+
+/* #endregion CONTACT_SECTION */
+
+
+
+
+/* #region CHAT_SECTION */
+#chat_section .col-8 {
+    border: 1px solid var(--my_secondary);
+    border-left: 0;
+}
+
+#chat_section header p {
+    color: var(--my_icons)
+}
+
+#chat_section main {
+    background-image: url(../img/mine.jpg);
+    height: calc(100% - 75px - 70px);
+    overflow-y: auto;
+}
+
 .message {
     max-width: 300px;
     min-height: 55px;
@@ -71,34 +99,6 @@ footer i {
     bottom: 2%;
     right: 5%;
     color: var(--my_icons);
-}
-
-/* #endregion COMMON and Utilities */
-
-/* #region CONTACT_SECTION */
-#contact_section>.col-4 {
-    border: 1px solid var(--my_secondary);
-}
-
-/* #endregion CONTACT_SECTION */
-
-
-
-
-/* #region CHAT_SECTION */
-#chat_section .col-8 {
-    border: 1px solid var(--my_secondary);
-    border-left: 0;
-}
-
-#chat_section header p {
-    color: var(--my_icons)
-}
-
-#chat_section main {
-    background-image: url(../img/mine.jpg);
-    height: calc(100% - 75px - 70px);
-    overflow-y: auto;
 }
 
 #chat_section footer {
