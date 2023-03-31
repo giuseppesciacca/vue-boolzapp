@@ -10,6 +10,7 @@
     --my_icons: rgba(177, 177, 177, 1);
     --my_sent_msg: rgba(213, 249, 186, 1);
     --my_chat_footer: rgba(243, 238, 234, 1);
+    --my_icons_dark: rgba(107, 115, 118, 1);
 }
 
 #wrapper {
@@ -35,7 +36,7 @@ header i {
 }
 
 footer i {
-    color: var(--my_icons);
+    color: var(--my_icons_dark);
     scale: 1.5;
 }
 
