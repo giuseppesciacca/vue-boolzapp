@@ -156,8 +156,8 @@
                             </div>
 
                             <div class="col-10 d-flex justify-content-center">
-                                <input type="text" name="" placeholder="Scrivi un messaggio" id=""
-                                    class="border-0 w-100 p-2 rounded-1">
+                                <input v-model="msg" type="text" name="" placeholder="Scrivi un messaggio" id=""
+                                    class="border-0 w-100 p-2 rounded-1" @keyup.enter="sendMsg(activeChat)">
                             </div>
 
                             <div class="col-1 d-flex justify-content-center">

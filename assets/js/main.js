@@ -182,5 +182,24 @@ createApp({
             console.log('clicked', index);
             this.activeChat = index;
         },
+        sendMsg(activeChat) {
+            console.log(this.msg);
+            this.contacts[activeChat].messages.push({
+                date: '31/03/2023 18:00:22',
+                message: this.msg,
+                status: 'sent'
+            })
+            this.msg = '';
+            setTimeout(() => {
+                this.autoMsg(activeChat)
+            }, 1000);
+        },
+        autoMsg(activeChat) {
+            this.contacts[activeChat].messages.push({
+                date: '31/03/2023 18:00:23',
+                message: 'ok',
+                status: 'received'
+            })
+        },
     },
 }).mount('#app')
