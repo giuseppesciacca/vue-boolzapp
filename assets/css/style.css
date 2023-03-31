@@ -11,7 +11,8 @@
     --my_sent_msg: rgba(213, 249, 186, 1);
     --my_chat_footer: rgba(243, 238, 234, 1);
     --my_icons_dark: rgba(107, 115, 118, 1);
-    --my_bg_form: rgba(250, 250, 250, 1)
+    --my_bg_form: rgba(250, 250, 250, 1);
+    --my_active_chat: rgba(233, 235, 235, 1);
 }
 
 #wrapper {
@@ -79,6 +80,19 @@ span.input-group-text {
 }
 
 span.input-group-text i {
+    color: var(--my_icons);
+}
+
+#contacts_chat>div {
+    height: 80px;
+}
+
+.chat_active {
+    background-color: var(--my_active_chat);
+}
+
+.last_message,
+.last_hour {
     color: var(--my_icons);
 }
 

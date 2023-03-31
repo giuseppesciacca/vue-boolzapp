@@ -71,6 +71,28 @@
                             </form>
                             <!-- /search -->
 
+                            <div id="contacts_chat">
+
+                                <div v-for="(contact, index) in contacts" class="d-flex align-items-center"
+                                    :class="activeChat==index ? 'chat_active' : ''">
+                                    <div class="ps-3">
+                                        <img class="img-fluid rounded-5" width="50" :src="'./assets/'+ contact.avatar"
+                                            alt="">
+                                    </div>
+
+                                    <div class="ps-3 flex-grow-1">
+                                        <h5 class="m-0">{{contact.name}}</h5>
+                                        <p class="m-0 last_message">Ultimo messaggio inviato</p>
+                                    </div>
+
+                                    <div class="ps-3 align-self-start">
+                                        <p class="p-2 last_hour">12:00</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- /#contacs_chat -->
+
 
 
                         </main>
