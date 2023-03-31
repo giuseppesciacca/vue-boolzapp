@@ -8,7 +8,7 @@
     --my_light: rgba(234, 234, 234, 1);
     --my_lighter: rgba(255, 255, 255, 1);
     --my_icons: rgba(177, 177, 177, 1);
-    --my_sended_msg: rgba(213, 249, 186, 1);
+    --my_sent_msg: rgba(213, 249, 186, 1);
     --my_chat_footer: rgba(243, 238, 234, 1);
 }
 
@@ -24,6 +24,19 @@ header {
     background-color: var(--my_light);
 }
 
+i {
+    color: var(--my_icons);
+    scale: 1.5;
+}
+
+.sent {
+    background-color: var(--my_sent_msg);
+}
+
+.received {
+    background-color: var(--my_lighter)
+}
+
 /* #endregion COMMON and Utilities */
 
 /* #region CONTACT_SECTION */
@@ -31,12 +44,10 @@ header {
     border: 1px solid var(--my_secondary);
 }
 
-i {
-    color: var(--my_icons);
-    scale: 1.5;
-}
-
 /* #endregion CONTACT_SECTION */
+
+
+
 
 /* #region CHAT_SECTION */
 #chat_section .col-8 {
