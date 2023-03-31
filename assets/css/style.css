@@ -31,7 +31,10 @@ header {
     border: 1px solid var(--my_secondary);
 }
 
-
+i {
+    color: var(--my_icons);
+    scale: 1.5;
+}
 
 /* #endregion CONTACT_SECTION */
 
@@ -41,10 +44,14 @@ header {
     border-left: 0;
 }
 
+#chat_section header p {
+    color: var(--my_icons)
+}
+
 #chat_section main {
     background-image: url(../img/mine.jpg);
     height: calc(100% - 75px - 70px);
-    overflow-y: auto;
+    /* overflow-y: auto; */
 }
 
 #chat_section footer {
