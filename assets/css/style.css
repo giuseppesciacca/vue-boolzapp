@@ -16,15 +16,11 @@
 }
 
 #wrapper {
-    height: 100vh;
+    height: calc(100vh);
+    min-height: 500px;
     background: linear-gradient(to top,
             rgba(218, 219, 211, 1) 85%,
             rgba(0, 150, 136, 1) 15%);
-}
-
-#wrapper .row>.col-4,
-#wrapper .row>.col-8 {
-    min-height: 650px;
 }
 
 header {
@@ -47,6 +43,7 @@ footer i {
 /* #region CONTACTS_SECTION */
 #contacts_section {
     background-color: var(--my_lighter);
+    overflow-x: hidden;
 }
 
 .notification {
@@ -83,6 +80,11 @@ span.input-group-text i {
     color: var(--my_icons);
 }
 
+#contacts_chat {
+    height: calc(100vh - 75px - 80px - 50px - 2rem);
+    overflow-y: auto;
+}
+
 #contacts_chat>div {
     height: 80px;
 }
@@ -112,7 +114,7 @@ span.input-group-text i {
 
 #chat_section main {
     background-image: url(../img/mine.jpg);
-    height: calc(100% - 75px - 70px);
+    height: calc(100vh - 75px - 70px - 2rem);
     overflow-y: auto;
 }
 
