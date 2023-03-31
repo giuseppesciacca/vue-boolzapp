@@ -82,11 +82,14 @@
 
                                     <div class="ps-3 flex-grow-1">
                                         <h5 class="m-0">{{contact.name}}</h5>
-                                        <p class="m-0 last_message">Ultimo messaggio inviato</p>
+                                        <p class="m-0 last_message">{{contact.messages[contact.messages.length -
+                                            1].message}}</p>
                                     </div>
 
                                     <div class="ps-3 align-self-start">
-                                        <p class="p-2 last_hour">12:00</p>
+                                        <p class="p-2 last_hour">{{contact.messages[contact.messages.length -
+                                            1].date.slice(11, 16)}}
+                                        </p>
                                     </div>
                                 </div>
 
@@ -111,7 +114,15 @@
                                 <div class="ps-3">
                                     <h5 class="m-0">{{contacts[activeChat].name}} </h5>
                                     <p class="m-0">
-                                        Ultimo accesso <span id="day">oggi</span> alle <span id="hour">12:00</span></p>
+                                        Ultimo accesso il <span
+                                            id="day">{{contacts[activeChat].messages[contacts[activeChat].messages.length
+                                            - 1].date.slice(0,
+                                            10)}}</span> alle
+                                        <span
+                                            id="hour">{{contacts[activeChat].messages[contacts[activeChat].messages.length
+                                            - 1].date.slice(11,
+                                            16)}}</span>
+                                    </p>
                                 </div>
                             </div>
 
@@ -132,7 +143,7 @@
                                     {{message.message}}
                                 </p>
 
-                                <span class="in_message_hour">{{message.date}}</span>
+                                <span class="in_message_hour">{{message.date.slice(11, 16)}}</span>
                             </div>
 
 
