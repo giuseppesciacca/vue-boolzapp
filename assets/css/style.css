@@ -9,32 +9,66 @@
     --my_lighter: rgba(255, 255, 255, 1);
     --my_icons: rgba(177, 177, 177, 1);
     --my_sended_msg: rgba(213, 249, 186, 1);
+    --my_chat_footer: rgba(243, 238, 234, 1);
 }
 
-/* #endregion COMMON and Utilities */
-
-/* #region MAIN */
-#app_main {
+#wrapper {
     height: calc(100vh);
     background: linear-gradient(to top,
             rgba(218, 219, 211, 1) 85%,
             rgba(0, 150, 136, 1) 15%);
 }
 
-/* #region DEBUG */
+header {
+    height: 75px;
+    background-color: var(--my_light);
+}
 
+/* #endregion COMMON and Utilities */
+
+/* #region CONTACT_SECTION */
+#contact_section .col-4 {
+    border: 1px solid var(--my_secondary);
+}
+
+
+
+/* #endregion CONTACT_SECTION */
+
+/* #region CHAT_SECTION */
+#chat_section .col-8 {
+    border: 1px solid var(--my_secondary);
+    border-left: 0;
+}
+
+#chat_section main {
+    background-image: url(../img/mine.jpg);
+    height: calc(100% - 75px - 70px);
+    overflow-y: auto;
+}
+
+#chat_section footer {
+    height: 70px;
+    background-color: var(--my_chat_footer);
+}
+
+/* #endregion CHAT_SECTION */
+
+
+
+/* #region DEBUG */
 .debug .container {
     background-color: red;
 }
 
 .debug .col-4 {
     background-color: blue;
-    min-height: 600px;
+    min-height: 650px;
 }
 
 .debug .col-8 {
     background-color: yellow;
-    min-height: 600px;
+    min-height: 650px;
 }
 
 /* #endregion DEBUG */
