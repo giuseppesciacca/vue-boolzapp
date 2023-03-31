@@ -42,8 +42,8 @@ footer i {
 
 /* #endregion COMMON and Utilities */
 
-/* #region CONTACT_SECTION */
-#contact_section {
+/* #region CONTACTS_SECTION */
+#contacts_section {
     background-color: var(--my_lighter);
 }
 
@@ -68,7 +68,15 @@ footer i {
     cursor: pointer;
 }
 
-/* #endregion CONTACT_SECTION */
+span.input-group-text {
+    background-color: var(--my_lighter);
+}
+
+span.input-group-text i {
+    color: var(--my_icons);
+}
+
+/* #endregion CONTACTS_SECTION */
 
 
 
