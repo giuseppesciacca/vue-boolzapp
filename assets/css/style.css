@@ -47,6 +47,27 @@ footer i {
     background-color: var(--my_lighter);
 }
 
+.notification {
+    height: 80px;
+    background-color: var(--my_active_notification);
+}
+
+.icon_bell_container {
+    width: 50px;
+    height: 50px;
+    background-color: var(--my_lighter);
+}
+
+.notification i {
+    color: var(--my_active_notification);
+    scale: 1.5;
+}
+
+#text_active_notification {
+    color: var(--my_icons_dark);
+    cursor: pointer;
+}
+
 /* #endregion CONTACT_SECTION */
 
 
