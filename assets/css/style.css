@@ -12,3 +12,11 @@
 }
 
 /* #endregion COMMON and Utilities */
+
+/* #region MAIN */
+body {
+    height: 100vh;
+    background: linear-gradient(to top,
+            rgba(218, 219, 211, 1) 85%,
+            rgba(0, 150, 136, 1) 15%);
+}
