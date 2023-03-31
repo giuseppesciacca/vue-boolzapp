@@ -11,18 +11,18 @@
     --my_sended_msg: rgba(213, 249, 186, 1);
 }
 
-body {
+/* #endregion COMMON and Utilities */
+
+/* #region MAIN */
+#app_main {
     height: calc(100vh);
     background: linear-gradient(to top,
             rgba(218, 219, 211, 1) 85%,
             rgba(0, 150, 136, 1) 15%);
 }
 
-/* #endregion COMMON and Utilities */
-
-/* #region MAIN */
-
 /* #region DEBUG */
+
 .debug .container {
     background-color: red;
 }
