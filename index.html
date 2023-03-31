@@ -74,7 +74,7 @@
                             <div id="contacts_chat">
 
                                 <div v-for="(contact, index) in contacts" class="d-flex align-items-center"
-                                    :class="activeChat==index ? 'chat_active' : ''">
+                                    :class="activeChat==index ? 'chat_active' : ''" @click="selectContact(index)">
                                     <div class="ps-3">
                                         <img class="img-fluid rounded-5" width="50" :src="'./assets/'+ contact.avatar"
                                             alt="">
@@ -100,18 +100,16 @@
                     <!-- /#contacts_section -->
 
 
-
-
-
                     <div id="chat_section" class="col-8 p-0 ">
 
                         <header class="d-flex align-items-center justify-content-between">
                             <div id="user_chatting" class="d-flex align-items-center">
                                 <div class="ps-3">
-                                    <img class="img-fluid rounded-5" width="50" src="./assets/img/avatar_1.jpg" alt="">
+                                    <img class="img-fluid rounded-5" width="50"
+                                        :src="'./assets/'+ contacts[activeChat].avatar">
                                 </div>
                                 <div class="ps-3">
-                                    <h5 class="m-0">Michele</h5>
+                                    <h5 class="m-0">{{contacts[activeChat].name}} </h5>
                                     <p class="m-0">Ultimo accesso <span id="day">oggi</span> alle <span
                                             id="hour">12:00</span></p>
                                 </div>
