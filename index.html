@@ -126,25 +126,16 @@
                         <!-- /header chat -->
 
                         <main class="d-flex flex-column">
-                            <div class="message sent">
+                            <div v-for="message in contacts[activeChat].messages"
+                                :class="contacts[activeChat].messages.status == sent ? 'sent' : 'received'"
+                                class="message">
                                 <p>
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                    {{contacts[activeChat].messages}}
                                 </p>
 
                                 <span class="in_message_hour">15:30</span>
                             </div>
 
-                            <div class="message sent">
-                                <p> Ricordati di stendere i panni
-                                    lorem2000
-                                </p>
-                                <span class="in_message_hour">15:50</span>
-                            </div>
-
-                            <div class="message received p-2">
-                                <p>Tutto fatto!</p>
-                                <span class="in_message_hour">16:15</span>
-                            </div>
 
                         </main>
                         <!-- /main chat -->
