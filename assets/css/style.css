@@ -14,7 +14,7 @@
 }
 
 #wrapper {
-    height: calc(100vh);
+    height: 100vh;
     background: linear-gradient(to top,
             rgba(218, 219, 211, 1) 85%,
             rgba(0, 150, 136, 1) 15%);
@@ -53,9 +53,8 @@ footer i {
 
 
 /* #region CHAT_SECTION */
-#chat_section .col-8 {
-    border: 1px solid var(--my_secondary);
-    border-left: 0;
+#chat_section {
+    border-left: 1px solid var(--my_secondary);
 }
 
 #chat_section header p {
