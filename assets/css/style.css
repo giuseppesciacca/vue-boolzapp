@@ -43,8 +43,8 @@ footer i {
 /* #endregion COMMON and Utilities */
 
 /* #region CONTACT_SECTION */
-#contact_section>.col-4 {
-    border: 1px solid var(--my_secondary);
+#contact_section {
+    background-color: var(--my_lighter);
 }
 
 /* #endregion CONTACT_SECTION */
@@ -114,9 +114,9 @@ footer i {
     background-color: red;
 } */
 
-.debug .col-4 {
+/* .debug .col-4 {
     background-color: blue;
-}
+} */
 
 /* .debug .col-8 {
     background-color: yellow;
