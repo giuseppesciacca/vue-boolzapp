@@ -19,12 +19,22 @@
             rgba(0, 150, 136, 1) 15%);
 }
 
+#wrapper .row>.col-4,
+#wrapper .row>.col-8 {
+    min-height: 650px;
+}
+
 header {
     height: 75px;
     background-color: var(--my_light);
 }
 
-i {
+header i {
+    color: var(--my_icons);
+    scale: 1.5;
+}
+
+footer i {
     color: var(--my_icons);
     scale: 1.5;
 }
@@ -40,7 +50,7 @@ i {
 /* #endregion COMMON and Utilities */
 
 /* #region CONTACT_SECTION */
-#contact_section .col-4 {
+#contact_section>.col-4 {
     border: 1px solid var(--my_secondary);
 }
 
@@ -75,18 +85,16 @@ i {
 
 
 /* #region DEBUG */
-.debug .container {
+/* .debug .container {
     background-color: red;
-}
+} */
 
 .debug .col-4 {
     background-color: blue;
-    min-height: 650px;
 }
 
-.debug .col-8 {
+/* .debug .col-8 {
     background-color: yellow;
-    min-height: 650px;
-}
+} */
 
 /* #endregion DEBUG */
