@@ -40,12 +40,37 @@ footer i {
     scale: 1.5;
 }
 
+.message {
+    max-width: 300px;
+    min-height: 55px;
+    border-radius: 0.75rem;
+    margin: 1rem 2rem;
+    position: relative;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.message>p {
+    margin-bottom: 0.7rem !important;
+}
+
 .sent {
     background-color: var(--my_sent_msg);
+    align-self: self-end;
 }
 
 .received {
-    background-color: var(--my_lighter)
+    background-color: var(--my_lighter);
+    align-self: self-start;
+}
+
+.in_message_hour {
+    font-size: 0.6rem;
+    position: absolute;
+    bottom: 2%;
+    right: 5%;
+    color: var(--my_icons);
 }
 
 /* #endregion COMMON and Utilities */
@@ -73,7 +98,7 @@ footer i {
 #chat_section main {
     background-image: url(../img/mine.jpg);
     height: calc(100% - 75px - 70px);
-    /* overflow-y: auto; */
+    overflow-y: auto;
 }
 
 #chat_section footer {
