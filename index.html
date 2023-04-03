@@ -68,14 +68,15 @@
 
                                 <input class="form-control me-2 my-2 p-0 ps-2" type="search" v-model.trim="addText"
                                     placeholder="Cerca o inizia una nuova chat" aria-label="Search" id="Search"
-                                    @keyup.enter="searchFilter()">
+                                    @keyup="searchFilter()">
                             </form>
                             <!-- /search -->
 
                             <div id="contacts_chat">
 
                                 <div v-for="(contact, index) in contacts" class="d-flex align-items-center"
-                                    :class="activeChat==index ? 'chat_active' : ''" @click="selectContact(index)">
+                                    :class="contact.visible === false ? 'd-none' : '' || activeChat==index ? 'chat_active' : '' "
+                                    @click="selectContact(index)">
                                     <div class="ps-3">
                                         <img class="img-fluid rounded-5" width="50" :src="'./assets/'+ contact.avatar"
                                             alt="">
