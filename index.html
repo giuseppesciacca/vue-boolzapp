@@ -175,7 +175,9 @@
                             </div>
 
                             <div class="col-1 d-flex justify-content-center">
-                                <i class="fa-solid fa-microphone"></i>
+                                <i class="fa-solid fa-microphone" :class="msg.length > 0 ? 'd-none' : ''"></i>
+                                <i class="fa-solid fa-paper-plane" :class="msg.length == 0 ? 'd-none' : ''"
+                                    @click="sendMsg(activeChat)"></i>
                             </div>
                         </footer>
                         <!-- /footer chat -->
