@@ -216,12 +216,15 @@ createApp({
         },
         searchFilter() {
             console.log(this.addText);
+
             this.contacts.filter((user) => {
                 const nameInLowerCase = user.name.toLowerCase()
                 if (!nameInLowerCase.includes(this.addText.toLowerCase())) {
                     return user.visible = false
+                } else {
+                    return user.visible = true
                 }
             })
-        }
+        },
     },
 }).mount('#app')
