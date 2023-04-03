@@ -24,7 +24,7 @@
         <div id="wrapper" class="d-flex align-items-center">
             <div class="container">
                 <div class="row">
-                    <div id="contacts_section" class="col-4 p-0">
+                    <div id="contacts_list" class="col-4 p-0">
 
                         <header class="d-flex align-items-center justify-content-between">
                             <div id="user_chatting" class="d-flex align-items-center">
@@ -170,7 +170,7 @@
                             </div>
 
                             <div class="col-10 d-flex justify-content-center">
-                                <input v-model="msg" type="text" name="" placeholder="Scrivi un messaggio" id=""
+                                <input v-model.trim="msg" type="text" name="" placeholder="Scrivi un messaggio" id=""
                                     class="border-0 w-100 p-2 rounded-1" @keyup.enter="sendMsg(activeChat)">
                             </div>
 

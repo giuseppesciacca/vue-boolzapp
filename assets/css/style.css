@@ -40,8 +40,8 @@ footer i {
 
 /* #endregion COMMON and Utilities */
 
-/* #region CONTACTS_SECTION */
-#contacts_section {
+/* #region CONTACTS_LIST */
+#contacts_list {
     background-color: var(--my_lighter);
     overflow-x: hidden;
 }
@@ -98,10 +98,7 @@ span.input-group-text i {
     color: var(--my_icons);
 }
 
-/* #endregion CONTACTS_SECTION */
-
-
-
+/* #endregion CONTACTS_LIST */
 
 /* #region CHAT_SECTION */
 #chat_section {
@@ -173,8 +170,6 @@ span.input-group-text i {
 }
 
 /* #endregion CHAT_SECTION */
-
-
 
 /* #region DEBUG */
 /* .debug .container {

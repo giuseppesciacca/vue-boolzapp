@@ -213,15 +213,18 @@ createApp({
             console.log(dateStr);
 
             console.log(this.msg);
-            this.contacts[activeChat].messages.push({
-                date: dateStr,
-                message: this.msg,
-                status: 'sent'
-            })
-            this.msg = '';
-            setTimeout(() => {
-                this.autoMsg(activeChat)
-            }, 1000);
+            if (this.msg.length > 0) {
+                this.contacts[activeChat].messages.push({
+                    date: dateStr,
+                    message: this.msg,
+                    status: 'sent'
+                })
+
+                this.msg = '';
+                setTimeout(() => {
+                    this.autoMsg(activeChat)
+                }, 1000);
+            }
         },
 
         /**
