@@ -130,13 +130,13 @@ span.input-group-text i {
     margin-bottom: 0.7rem !important;
 }
 
-.dropdown {
+#chat_section main .dropdown {
     position: absolute;
     top: 0;
     right: 0;
 }
 
-.dropdown i {
+#chat_section main .dropdown i {
     color: var(--my_icons);
     scale: 1.1;
 }
