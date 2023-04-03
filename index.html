@@ -66,8 +66,9 @@
                                     <i class="fa-solid fa-magnifying-glass mx-3"></i>
                                 </span>
 
-                                <input class="form-control me-2 my-2 p-0 ps-2" type="search"
-                                    placeholder="Cerca o inizia una nuova chat" aria-label="Search">
+                                <input class="form-control me-2 my-2 p-0 ps-2" type="search" v-model.trim="addText"
+                                    placeholder="Cerca o inizia una nuova chat" aria-label="Search" id="Search"
+                                    @keyup.enter="searchFilter()">
                             </form>
                             <!-- /search -->
 
