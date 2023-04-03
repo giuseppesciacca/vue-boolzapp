@@ -215,16 +215,20 @@ createApp({
             })
         },
         searchFilter() {
-            console.log(this.addText);
-
+            //console.log(this.addText);
             this.contacts.filter((user) => {
                 const nameInLowerCase = user.name.toLowerCase()
                 if (!nameInLowerCase.includes(this.addText.toLowerCase())) {
-                    return user.visible = false
+                    return user.visible = false //se non hanno la stringa diventano false
                 } else {
                     return user.visible = true
                 }
             })
         },
+        deleteMessage(message, activeChat) {
+            nIndex = this.contacts[activeChat].messages.indexOf(message); //risalgo all'indice nell'array del messaggio
+
+            this.contacts[activeChat].messages.splice(nIndex, 1)
+        }
     },
 }).mount('#app')

@@ -141,11 +141,23 @@
                         <main class="d-flex flex-column">
                             <div v-for="message in contacts[activeChat].messages"
                                 :class="message.status === 'sent' ? 'sent' : 'received'" class="message">
-                                <p>
+                                <p class="me-3">
                                     {{message.message}}
                                 </p>
 
                                 <span class="in_message_hour">{{message.date.slice(11, 16)}}</span>
+
+                                <div class="dropdown">
+                                    <button class="my_btn_dropdown" type="button" data-bs-toggle="dropdown">
+                                        <i class="fa-solid fa-angle-down"></i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Message info</a></li>
+                                        <li><a class="dropdown-item" href="#"
+                                                @click="deleteMessage(message, activeChat)">Delete message</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
 
 

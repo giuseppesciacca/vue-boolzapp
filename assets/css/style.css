@@ -133,6 +133,22 @@ span.input-group-text i {
     margin-bottom: 0.7rem !important;
 }
 
+.dropdown {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.dropdown i {
+    color: var(--my_icons);
+    scale: 1.1;
+}
+
+.dropdown .my_btn_dropdown {
+    border: none;
+    background-color: transparent;
+}
+
 .sent {
     background-color: var(--my_sent_msg);
     align-self: self-end;
