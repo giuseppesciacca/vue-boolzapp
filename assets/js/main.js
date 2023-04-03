@@ -15,7 +15,8 @@ Milestone 4
 Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
 
 Milestone 5 - opzionale
-Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato*/
+Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato.
+Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti*/
 
 const { createApp } = Vue
 
@@ -25,6 +26,7 @@ createApp({
             activeChat: 0,
             msg: '',
             addText: '',
+            date: new Date(),
             contacts: [
                 {
                     name: 'Michele',
@@ -196,9 +198,20 @@ createApp({
             this.activeChat = index;
         },
         sendMsg(activeChat) {
+            /* ORA IN FORMATO GG/MM/AAAA HH:MM:SS */
+            const date = new Date();
+            const dateStr =
+                ("00" + date.getDate()).slice(-2) + "/" +
+                ("00" + (date.getMonth() + 1)).slice(-2) + "/" +
+                date.getFullYear() + " " +
+                ("00" + date.getHours()).slice(-2) + ":" +
+                ("00" + date.getMinutes()).slice(-2) + ":" +
+                ("00" + date.getSeconds()).slice(-2);
+            console.log(dateStr);
+
             console.log(this.msg);
             this.contacts[activeChat].messages.push({
-                date: '31/03/2023 18:00:22',
+                date: dateStr,
                 message: this.msg,
                 status: 'sent'
             })
