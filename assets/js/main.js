@@ -194,10 +194,19 @@ createApp({
         }
     },
     methods: {
+        /**
+         * 
+         * @param {int} index 
+         */
         selectContact(index) {
             console.log('clicked', index);
             this.activeChat = index;
         },
+
+        /**
+         * 
+         * @param {int} activeChat 
+         */
         sendMsg(activeChat) {
             /* ORA IN FORMATO GG/MM/AAAA HH:MM:SS */
             dateStr = this.nowDateInString()
@@ -214,6 +223,11 @@ createApp({
                 this.autoMsg(activeChat)
             }, 1000);
         },
+
+        /**
+         * 
+         * @param {int} activeChat 
+         */
         autoMsg(activeChat) {
             /* ORA IN FORMATO GG/MM/AAAA HH:MM:SS */
             dateStr = this.nowDateInString()
@@ -224,6 +238,10 @@ createApp({
                 status: 'received'
             })
         },
+
+        /**
+         * @returns {user.visible == true OR == false}
+         */
         searchFilter() {
             //console.log(this.addText);
             this.contacts.filter((user) => {
@@ -235,12 +253,24 @@ createApp({
                 }
             })
         },
+
+        /**
+         * 
+         * @param {Object} message 
+         * @param {int} activeChat 
+         */
         deleteMessage(message, activeChat) {
             nIndex = this.contacts[activeChat].messages.indexOf(message); //risalgo all'indice nell'array del messaggio
 
             this.contacts[activeChat].messages.splice(nIndex, 1)
         },
+
+        /**
+         * 
+         * @returns {string} GG/MM/AAAA HH:MM:SS
+         */
         nowDateInString() {
+            /* ORA IN FORMATO GG/MM/AAAA HH:MM:SS */
             let dateStr =
                 ("00" + this.date.getDate()).slice(-2) + "/" +
                 ("00" + (this.date.getMonth() + 1)).slice(-2) + "/" +
