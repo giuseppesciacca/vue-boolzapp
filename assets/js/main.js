@@ -23,6 +23,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            date: new Date(),
             activeChat: 0,
             msg: '',
             addText: '',
@@ -199,14 +200,7 @@ createApp({
         },
         sendMsg(activeChat) {
             /* ORA IN FORMATO GG/MM/AAAA HH:MM:SS */
-            const date = new Date();
-            const dateStr =
-                ("00" + date.getDate()).slice(-2) + "/" +
-                ("00" + (date.getMonth() + 1)).slice(-2) + "/" +
-                date.getFullYear() + " " +
-                ("00" + date.getHours()).slice(-2) + ":" +
-                ("00" + date.getMinutes()).slice(-2) + ":" +
-                ("00" + date.getSeconds()).slice(-2);
+            dateStr = this.nowDateInString()
             console.log(dateStr);
 
             console.log(this.msg);
@@ -221,8 +215,11 @@ createApp({
             }, 1000);
         },
         autoMsg(activeChat) {
+            /* ORA IN FORMATO GG/MM/AAAA HH:MM:SS */
+            dateStr = this.nowDateInString()
+
             this.contacts[activeChat].messages.push({
-                date: '31/03/2023 18:00:23',
+                date: dateStr,
                 message: 'Ok',
                 status: 'received'
             })
@@ -242,6 +239,16 @@ createApp({
             nIndex = this.contacts[activeChat].messages.indexOf(message); //risalgo all'indice nell'array del messaggio
 
             this.contacts[activeChat].messages.splice(nIndex, 1)
+        },
+        nowDateInString() {
+            let dateStr =
+                ("00" + this.date.getDate()).slice(-2) + "/" +
+                ("00" + (this.date.getMonth() + 1)).slice(-2) + "/" +
+                this.date.getFullYear() + " " +
+                ("00" + this.date.getHours()).slice(-2) + ":" +
+                ("00" + this.date.getMinutes()).slice(-2) + ":" +
+                ("00" + this.date.getSeconds()).slice(-2);
+            return dateStr
         }
     },
 }).mount('#app')
