@@ -207,6 +207,22 @@ createApp({
             this.activeChat = index;
         },
 
+        lastAccess(activeChat) {
+            dateLastMessageSent = this.contacts[activeChat].messages[this.contacts[activeChat].messages.length - 1].date.slice(0,
+                10)
+
+            console.log(dateLastMessageSent);
+            console.log(this.nowDateInString().slice(0,
+                10));
+
+            if (dateLastMessageSent == this.nowDateInString().slice(0,
+                10)) {
+                return 'Ultimo accesso oggi'
+            } else {
+                return 'Ultimo accesso il ' + dateLastMessageSent
+            }
+        },
+
         /**
          * 
          * @param {int} activeChat 
@@ -355,8 +371,3 @@ createApp({
         }
     },
 }).mount('#app')
-
-
-/* const dt = luxon.DateTime;
-console.log(dt);
-console.log(dt.now().toLocaleString()); */

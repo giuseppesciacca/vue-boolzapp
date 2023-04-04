@@ -174,10 +174,7 @@
                                 <div class="ps-3">
                                     <h5 class="m-0">{{contacts[activeChat].name}} </h5>
                                     <p v-if="contacts[activeChat].messages.length > 0" class="m-0">
-                                        Ultimo accesso il <span
-                                            id="day">{{contacts[activeChat].messages[contacts[activeChat].messages.length
-                                            - 1].date.slice(0,
-                                            10)}}</span> alle
+                                        <span id="day"> {{lastAccess(activeChat)}}</span> alle
                                         <span
                                             id="hour">{{contacts[activeChat].messages[contacts[activeChat].messages.length
                                             - 1].date.slice(11,
