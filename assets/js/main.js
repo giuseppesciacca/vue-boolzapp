@@ -314,12 +314,11 @@ createApp({
         },
 
         deleteAllMessage(activeChat) {
+            this.contacts[activeChat].messages = [];
         },
-
         deleteChat(activeChat) {
             this.contacts.splice(this.contacts[activeChat], 1);
         },
-
         activeNotification() {
             const activeNotiEl = document.getElementById('text_active_notification');
             const slashBellEl = document.querySelector('.fa-bell-slash');
@@ -333,3 +332,8 @@ createApp({
         }
     },
 }).mount('#app')
+
+
+/* const dt = luxon.DateTime;
+console.log(dt);
+console.log(dt.now().toLocaleString()); */
