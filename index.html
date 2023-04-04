@@ -41,7 +41,48 @@
 
                                 <i class="fa-solid fa-message pe-4"></i>
 
-                                <i class="fa-solid fa-ellipsis-vertical pe-4"></i>
+                                <div class="dropdown d-inline">
+                                    <button class="my_btn_dropdown" type="button" data-bs-toggle="dropdown">
+                                        <i class="fa-solid fa-ellipsis-vertical pe-4"></i>
+                                    </button>
+
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <!-- Button trigger modal -->
+                                            <button type="button" class="btn" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal">
+                                                <a class="dropdown-item" href="#" data-bs-target="#exampleModal">Nuovo
+                                                    contatto</a>
+                                            </button>
+                                        </li>
+                                    </ul>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+
+                                                <div class="modal-body">
+                                                    <form action="" class="h-100">
+                                                        <label for="contact_name">Nome contatto</label> <br>
+                                                        <input type="text" placeholder="Nome contatto"
+                                                            v-model.trim="contactName" id="contact_name"> <br>
+                                                        <label for="contact_url">URL contatto</label> <br>
+                                                        <input type="text" placeholder="url contatto" id="contact_url"
+                                                            v-model.trim="contactUrl"> <br>
+                                                        <button class="btn" @click="newContact()">Aggiungi</button><br>
+                                                        <button type="button" class="btn-close d-none" id="close_modal"
+                                                            data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </form>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
                             </div>
                         </header>
                         <!-- /header contact -->
@@ -85,7 +126,7 @@
                                     @click="selectContact(index)">
                                     <div class="ps-3">
                                         <img class="img-fluid rounded-5" width="50" :src="'./assets/'+ contact.avatar"
-                                            alt="">
+                                            :alt="getFirstLetters(contact.name)">
                                     </div>
 
                                     <div class="ps-3 flex-grow-1">
@@ -124,7 +165,7 @@
                             <div id="user_chatting" class="d-flex align-items-center">
                                 <div class="ps-3">
                                     <img class="img-fluid rounded-5" width="50"
-                                        :src="'./assets/'+ contacts[activeChat].avatar">
+                                        :src="'./assets/'+ contacts[activeChat].avatar" :alt="getFirstLetters(contacts[activeChat].name)">
                                 </div>
                                 <div class="ps-3">
                                     <h5 class="m-0">{{contacts[activeChat].name}} </h5>
