@@ -259,6 +259,10 @@ span.input-group-text i {
     color: var(--my_light);
 }
 
+.fa-chevron-left {
+    scale: 1;
+}
+
 /* #endregion CHAT_SECTION */
 
 /* #region DEBUG */

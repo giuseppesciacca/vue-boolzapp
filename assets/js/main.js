@@ -411,6 +411,18 @@ createApp({
             wrapperEl.classList.toggle('dark');
             lightBtnEl.classList.toggle('d-none');
             darkBtnEl.classList.toggle('d-none');
+        },
+
+        /**
+         * on mobile phone
+         */
+        backToList() {
+            contactsListEl = document.getElementById('contacts_list');
+            chatSectionEl = document.getElementById('chat_section');
+
+            contactsListEl.classList.toggle('d-none')
+            contactsListEl.classList.toggle('d-md-block')
+            chatSectionEl.classList.toggle('d-none')
         }
     },
 }).mount('#app')
