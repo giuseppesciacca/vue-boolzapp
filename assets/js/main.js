@@ -318,6 +318,18 @@ createApp({
 
         deleteChat(activeChat) {
             this.contacts.splice(this.contacts[activeChat], 1);
+        },
+
+        activeNotification() {
+            const activeNotiEl = document.getElementById('text_active_notification');
+            const slashBellEl = document.querySelector('.fa-bell-slash');
+            activeNotiEl.classList.toggle('d-none');
+            slashBellEl.classList.toggle('d-none');
+
+            const disactiveNotiEl = document.getElementById('text_disactive_notification');
+            const bellEl = document.querySelector('.fa-bell');
+            disactiveNotiEl.classList.toggle('d-none')
+            bellEl.classList.toggle('d-none')
         }
     },
 }).mount('#app')

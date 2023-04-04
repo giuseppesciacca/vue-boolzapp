@@ -51,11 +51,17 @@
                                 <div
                                     class="d-flex align-items-center justify-content-center rounded-5 icon_bell_container">
                                     <i class="fa-solid fa-bell-slash fa-fw"></i>
+
+                                    <i class="fa-solid fa-bell da-fw d-none"></i>
                                 </div>
 
                                 <div class="px-3">
                                     <h6 class="m-0">Ricevi notifiche di nuovi messaggi</h6>
-                                    <p id="text_active_notification" class="m-0 text-decoration-underline">Attiva
+                                    <p @click="activeNotification" id="text_active_notification"
+                                        class="m-0 text-decoration-underline">Attiva
+                                        notifiche desktop</p>
+                                    <p @click="activeNotification" id="text_disactive_notification"
+                                        class="m-0 text-decoration-underline d-none">Disattiva
                                         notifiche desktop</p>
                                 </div>
                             </div>

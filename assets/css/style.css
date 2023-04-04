@@ -62,7 +62,8 @@ footer i {
     scale: 1.5;
 }
 
-#text_active_notification {
+#text_active_notification,
+#text_disactive_notification {
     color: var(--my_icons_dark);
     cursor: pointer;
 }
