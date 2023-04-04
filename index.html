@@ -41,7 +41,7 @@
 
                                 <i class="fa-solid fa-message pe-4"></i>
 
-                                <div class="dropdown d-inline">
+                                <div class="dropdown dropstart d-inline">
                                     <button class="my_btn_dropdown" type="button" data-bs-toggle="dropdown">
                                         <i class="fa-solid fa-ellipsis-vertical pe-4"></i>
                                     </button>
@@ -68,10 +68,11 @@
                                                         <label for="contact_name">Nome contatto</label> <br>
                                                         <input type="text" placeholder="Nome contatto"
                                                             v-model.trim="contactName" id="contact_name"> <br>
-                                                        <label for="contact_url">URL contatto</label> <br>
-                                                        <input type="text" placeholder="url contatto" id="contact_url"
+                                                        <label for="contact_url" class="mt-2">URL immagine contatto (facoltativo)</label> <br>
+                                                        <input type="text" placeholder="URL immagine contatto" id="contact_url"
                                                             v-model.trim="contactUrl"> <br>
-                                                        <button class="btn" @click="newContact()">Aggiungi</button><br>
+                                                        <button class="btn btn-success mt-2" @click="newContact()">Aggiungi</button><br>
+
                                                         <button type="button" class="btn-close d-none" id="close_modal"
                                                             data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </form>
@@ -165,7 +166,8 @@
                             <div id="user_chatting" class="d-flex align-items-center">
                                 <div class="ps-3">
                                     <img class="img-fluid rounded-5" width="50"
-                                        :src="'./assets/'+ contacts[activeChat].avatar" :alt="getFirstLetters(contacts[activeChat].name)">
+                                        :src="'./assets/'+ contacts[activeChat].avatar"
+                                        :alt="getFirstLetters(contacts[activeChat].name)">
                                 </div>
                                 <div class="ps-3">
                                     <h5 class="m-0">{{contacts[activeChat].name}} </h5>

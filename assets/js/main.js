@@ -328,8 +328,6 @@ createApp({
             bellEl.classList.toggle('d-none')
         },
         newContact() {
-            console.log(this.contactName);
-
             const closeModalEl = document.getElementById('close_modal');
 
             if (this.contactName.length > 0) {
