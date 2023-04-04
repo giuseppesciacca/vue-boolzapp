@@ -373,6 +373,8 @@ createApp({
         newContact() {
             const closeModalEl = document.getElementById('close_modal');
 
+            event.preventDefault()
+
             if (this.contactName.length > 0) {
                 let contact = {
                     name: this.contactName,
