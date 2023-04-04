@@ -68,10 +68,12 @@
                                                         <label for="contact_name">Nome contatto</label> <br>
                                                         <input type="text" placeholder="Nome contatto"
                                                             v-model.trim="contactName" id="contact_name"> <br>
-                                                        <label for="contact_url" class="mt-2">URL immagine contatto (facoltativo)</label> <br>
-                                                        <input type="text" placeholder="URL immagine contatto" id="contact_url"
-                                                            v-model.trim="contactUrl"> <br>
-                                                        <button class="btn btn-success mt-2" @click="newContact()">Aggiungi</button><br>
+                                                        <label for="contact_url" class="mt-2">URL immagine contatto
+                                                            (facoltativo)</label> <br>
+                                                        <input type="text" placeholder="URL immagine contatto"
+                                                            id="contact_url" v-model.trim="contactUrl"> <br>
+                                                        <button class="btn btn-success mt-2"
+                                                            @click="newContact()">Aggiungi</button><br>
 
                                                         <button type="button" class="btn-close d-none" id="close_modal"
                                                             data-bs-dismiss="modal" aria-label="Close"></button>
@@ -183,7 +185,7 @@
                                     </p>
 
                                     <p v-else class="m-0">
-                                        Impossibile risalire all'ultimo accesso
+
                                     </p>
 
                                 </div>
