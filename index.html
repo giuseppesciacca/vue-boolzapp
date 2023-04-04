@@ -38,9 +38,10 @@
                             </div>
 
                             <div id="chat_menu">
-                                <i class="fa-solid fa-circle-notch pe-4"></i>
+                                <i class="fa-solid fa-circle-notch pe-4 d-none d-lg-inline-block"></i>
 
-                                <i class="fa-solid fa-message pe-4"></i>
+                                <i class="fa-solid fa-message pe-4" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal"></i>
 
                                 <div class="dropdown dropstart d-inline">
                                     <button class="my_btn_dropdown" type="button" data-bs-toggle="dropdown">
@@ -48,11 +49,6 @@
                                     </button>
 
                                     <ul class="dropdown-menu">
-                                        <li>
-                                            <!-- Button trigger modal -->
-                                            <a data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                                class="dropdown-item" href="#">Nuovo contatto</a>
-                                        </li>
                                         <li>
                                             <a class="dropdown-item" href="#" data-bs-target="#exampleModal"
                                                 @click="toggleDark()" id="dark_mode">Dark
@@ -73,6 +69,8 @@
 
                                                 <div class="modal-body">
                                                     <form action="" class="h-100">
+                                                        <h6>Aggiungi nuovo contatto</h6>
+
                                                         <label for="contact_name">Nome contatto</label> <br>
                                                         <input type="text" placeholder="Nome contatto"
                                                             v-model.trim="contactName" id="contact_name"> <br>
@@ -91,7 +89,6 @@
                                             </div>
                                         </div>
                                     </div>
-
 
                                 </div>
                             </div>
@@ -174,7 +171,7 @@
 
                         <header class="d-flex align-items-center justify-content-between">
                             <div id="user_chatting" class="d-flex align-items-center">
-                                <div class="d-inline ps-1" @click="backToList()">
+                                <div class="ps-1 d-flex align-items-center" style="height: 75px" @click="backToList()">
                                     <i class="fa-solid fa-chevron-left d-md-none fa-fw"></i>
                                 </div>
                                 <div class="ps-3">
