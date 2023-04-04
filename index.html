@@ -173,18 +173,16 @@
                                 </div>
                                 <div class="ps-3">
                                     <h5 class="m-0">{{contacts[activeChat].name}} </h5>
-                                    <p v-if="contacts[activeChat].messages.length > 0" class="m-0">
-                                        <span id="day"> {{lastAccess(activeChat)}}</span> alle
-                                        <span
-                                            id="hour">{{contacts[activeChat].messages[contacts[activeChat].messages.length
-                                            - 1].date.slice(11,
-                                            16)}}</span>
+
+                                    <p v-if="lastAc.length > 1" class="m-0">
+                                        {{lastAc}}
                                     </p>
 
-                                    <p v-else class="m-0">
-
+                                    <p v-else-if="contacts[activeChat].messages.length > 0" class="m-0">
+                                        {{lastAccess(activeChat)}}
                                     </p>
 
+                                    <p v-else class="m-0"></p>
                                 </div>
                             </div>
 
@@ -275,7 +273,7 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
     <!-- Vue.js CDN -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.min.js"></script>
     <!-- JS -->
     <script src="./assets/js/main.js"></script>
 </body>

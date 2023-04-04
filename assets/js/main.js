@@ -1,7 +1,4 @@
 /* BONUS MANCANTI
-sotto al nome del contatto nella parte in alto a destra, cambiare l'indicazione dello stato: visualizzare il testo "sta scrivendo..."
-nel timeout in cui il pc risponde, poi mantenere la scritta "online" per un paio di secondi e infine visualizzare "ultimo accesso alle xx:yy" con l'orario corretto
-
 fare scroll in giù in automatico fino al messaggio più recente, quando viene aggiunto un nuovo messaggio alla conversazione (NB: potrebbe esserci bisogno di utilizzare nextTick - vedi documentazione Vue3)
 
 Grafica
@@ -17,6 +14,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            lastAc: '',
             contactName: '',
             contactUrl: '',
             date: new Date(),
@@ -207,19 +205,28 @@ createApp({
             this.activeChat = index;
         },
 
+        /**
+         * 
+         * @param {int} activeChat 
+         * @returns string of date
+         * se la data è uguale ad oggi scrivi oggi, altrimenti la data completa dell'ultimo messaggio
+        */
         lastAccess(activeChat) {
             dateLastMessageSent = this.contacts[activeChat].messages[this.contacts[activeChat].messages.length - 1].date.slice(0,
-                10)
+                10);
+            hourLastMessageSent = this.contacts[activeChat].messages[this.contacts[activeChat].messages.length - 1].date.slice(11, 16);
 
             console.log(dateLastMessageSent);
+            console.log(hourLastMessageSent);
+
             console.log(this.nowDateInString().slice(0,
                 10));
 
             if (dateLastMessageSent == this.nowDateInString().slice(0,
                 10)) {
-                return 'Ultimo accesso oggi'
+                return 'Ultimo accesso oggi alle ' + hourLastMessageSent
             } else {
-                return 'Ultimo accesso il ' + dateLastMessageSent
+                return 'Ultimo accesso il ' + dateLastMessageSent + ' alle ' + hourLastMessageSent
             }
         },
 
@@ -242,10 +249,26 @@ createApp({
 
                 this.msg = '';
 
-                setTimeout(() => {
-                    this.autoMsg(activeChat)
-                }, 1000);
+                this.modifyLastAccess(activeChat)
             }
+        },
+
+        /**
+         * 
+         * @param {int} activeChat 
+         * Appena invio il messaggio, l'interlocutore inizia a scrivere per 1 secondo e risulta che sta scrivendo. Successivamente per tot secondi risulterà online, poi uscirà e verrà mostrato l'orario
+         */
+        modifyLastAccess(activeChat) {
+            this.lastAc = 'Sta scrivendo...'
+            setTimeout(() => {
+                this.autoMsg(activeChat)
+                this.lastAc = 'Online'
+
+                setTimeout(() => {
+                    this.lastAc = this.lastAccess(activeChat);
+                }, 3000)
+
+            }, 1000)
         },
 
         /**
