@@ -6,8 +6,7 @@ visualizzare un messaggio di benvenuto che invita l'utente a selezionare un cont
 aggiungere una splash page visibile per 1s all'apertura dell'app
 A) rendere l'app responsive e fruibile anche su mobile: di default si visualizza solo la lista dei contatti e cliccando su un contatto si vedono i messaggi di quel contatto. 
 B) aggiungere quindi un'icona con una freccia verso sinistra per tornare indietro, dalla visualizzazione della chat alla visualizzazione di tutti i contatti
-aggiungere un'icona per ingrandire o rimpicciolire il font: dovrebbe essere sufficiente aggiungere una classe al wrapper principale
-aggiungere un'icona per cambiare la modalità light/dark: dovrebbe essere sufficiente aggiungere una classe al wrapper principale*/
+aggiungere un'icona per ingrandire o rimpicciolire il font: dovrebbe essere sufficiente aggiungere una classe al wrapper principale*/
 
 const { createApp } = Vue
 
@@ -391,6 +390,19 @@ createApp({
             });
 
             return firstLetterArray.join('').toUpperCase()
+        },
+
+        /**
+         * attiva disattiva dark mode
+         */
+        toggleDark() {
+            wrapperEl = document.getElementById('wrapper');
+            lightBtnEl = document.getElementById('light_mode');
+            darkBtnEl = document.getElementById('dark_mode');
+
+            wrapperEl.classList.toggle('dark');
+            lightBtnEl.classList.toggle('d-none');
+            darkBtnEl.classList.toggle('d-none');
         }
     },
 }).mount('#app')

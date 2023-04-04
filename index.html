@@ -49,11 +49,18 @@
                                     <ul class="dropdown-menu">
                                         <li>
                                             <!-- Button trigger modal -->
-                                            <button type="button" class="btn" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal">
-                                                <a class="dropdown-item" href="#" data-bs-target="#exampleModal">Nuovo
-                                                    contatto</a>
-                                            </button>
+                                            <a data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                                class="dropdown-item" href="#">Nuovo contatto</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#" data-bs-target="#exampleModal"
+                                                @click="toggleDark()" id="dark_mode">Dark
+                                                mode</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item d-none" href="#" data-bs-target="#exampleModal"
+                                                id="light_mode" @click="toggleDark()">Light
+                                                mode</a>
                                         </li>
                                     </ul>
 

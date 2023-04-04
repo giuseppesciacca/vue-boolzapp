@@ -13,6 +13,12 @@
     --my_icons_dark: rgba(107, 115, 118, 1);
     --my_bg_form: rgba(250, 250, 250, 1);
     --my_active_chat: rgba(233, 235, 235, 1);
+
+    --my_dark_sent_msg_and_primary: rgba(2, 92, 76, 1);
+    --my_dark_received_msg: rgba(54, 54, 54, 1);
+    --my_darker: rgba(32, 32, 32, 1);
+    --my_dark_secondary: rgba(39, 39, 39, 1);
+    --my_dark_active_chat: rgba(64, 64, 64, 1);
 }
 
 #wrapper {
@@ -23,9 +29,20 @@
             rgba(0, 150, 136, 1) 15%);
 }
 
+#wrapper.dark {
+    background: linear-gradient(to top,
+            rgba(32, 32, 32, 1) 85%,
+            rgba(2, 92, 76, 1) 15%);
+}
+
 header {
     height: 75px;
     background-color: var(--my_light);
+}
+
+.dark header {
+    background-color: var(--my_dark_secondary);
+    color: var(--my_light);
 }
 
 header i {
@@ -46,9 +63,21 @@ footer i {
     overflow-x: hidden;
 }
 
+.dark #contacts_chat h5 {
+    color: var(--my_light);
+}
+
+.dark #contacts_list {
+    background-color: var(--my_dark_secondary);
+}
+
 .notification {
     height: 80px;
     background-color: var(--my_active_notification);
+}
+
+.dark .notification {
+    background-color: var(--my_dark_active_chat);
 }
 
 .icon_bell_container {
@@ -57,9 +86,17 @@ footer i {
     background-color: var(--my_lighter);
 }
 
+.dark .icon_bell_container {
+    background-color: var(--my_dark_active_chat);
+}
+
 .notification i {
     color: var(--my_active_notification);
     scale: 1.5;
+}
+
+.dark .notification h6 {
+    color: var(--my_light);
 }
 
 #text_active_notification,
@@ -73,8 +110,25 @@ form {
     background: var(--my_bg_form);
 }
 
+.dark form {
+    background: var(--my_dark_secondary);
+}
+
 span.input-group-text {
     background-color: var(--my_lighter);
+}
+
+.dark span.input-group-text {
+    background-color: var(--my_dark_received_msg);
+}
+
+.dark #Search {
+    background-color: var(--my_dark_received_msg);
+    color: var(--my_light);
+}
+
+.dark #Search::placeholder {
+    color: var(--my_light);
 }
 
 span.input-group-text i {
@@ -94,6 +148,10 @@ span.input-group-text i {
     background-color: var(--my_active_chat);
 }
 
+.dark .chat_active {
+    background-color: var(--my_dark_active_chat);
+}
+
 .last_message,
 .last_hour {
     color: var(--my_icons);
@@ -106,6 +164,10 @@ span.input-group-text i {
     border-left: 1px solid var(--my_secondary);
 }
 
+.dark #chat_section {
+    border-left: 1px solid var(--my_darker);
+}
+
 #chat_section header p {
     color: var(--my_icons)
 }
@@ -114,6 +176,10 @@ span.input-group-text i {
     background-image: url(../img/mine.jpg);
     height: calc(100vh - 75px - 70px - 2rem);
     overflow-y: auto;
+}
+
+.dark #chat_section main {
+    background-image: url(../img/dark_bg.jpg);
 }
 
 .message {
@@ -152,9 +218,19 @@ span.input-group-text i {
     align-self: self-end;
 }
 
+.dark .sent {
+    background-color: var(--my_dark_sent_msg_and_primary);
+    color: var(--my_lighter);
+}
+
 .received {
     background-color: var(--my_lighter);
     align-self: self-start;
+}
+
+.dark .received {
+    background-color: var(--my_dark_received_msg);
+    color: var(--my_lighter);
 }
 
 .in_message_hour {
@@ -168,6 +244,19 @@ span.input-group-text i {
 #chat_section footer {
     height: 70px;
     background-color: var(--my_chat_footer);
+}
+
+.dark #chat_section footer {
+    background-color: var(--my_dark_secondary);
+}
+
+.dark #chat_section footer input {
+    background-color: var(--my_dark_secondary);
+    color: var(--my_light);
+}
+
+.dark #chat_section footer input::placeholder {
+    color: var(--my_light);
 }
 
 /* #endregion CHAT_SECTION */
