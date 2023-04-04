@@ -4,8 +4,9 @@ fare scroll in giù in automatico fino al messaggio più recente, quando viene a
 Grafica
 visualizzare un messaggio di benvenuto che invita l'utente a selezionare un contatto dalla lista per visualizzare i suoi messaggi, anziché attivare di default la prima conversazione
 aggiungere una splash page visibile per 1s all'apertura dell'app
-A) rendere l'app responsive e fruibile anche su mobile: di default si visualizza solo la lista dei contatti e cliccando su un contatto si vedono i messaggi di quel contatto. 
+
 B) aggiungere quindi un'icona con una freccia verso sinistra per tornare indietro, dalla visualizzazione della chat alla visualizzazione di tutti i contatti
+
 aggiungere un'icona per ingrandire o rimpicciolire il font: dovrebbe essere sufficiente aggiungere una classe al wrapper principale*/
 
 const { createApp } = Vue
@@ -200,8 +201,15 @@ createApp({
          * @param {int} index 
          */
         selectContact(index) {
+            contactsListEl = document.getElementById('contacts_list');
+            chatSectionEl = document.getElementById('chat_section');
+
             console.log('clicked', index);
             this.activeChat = index;
+
+            contactsListEl.classList.toggle('d-none')
+            contactsListEl.classList.toggle('d-md-block')
+            chatSectionEl.classList.toggle('d-none')
         },
 
         /**
