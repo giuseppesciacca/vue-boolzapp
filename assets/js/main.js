@@ -208,15 +208,16 @@ createApp({
          * se la data è uguale ad oggi scrivi oggi, altrimenti la data completa dell'ultimo messaggio
         */
         lastAccess(activeChat) {
-            dateLastMessageSent = this.contacts[activeChat].messages[this.contacts[activeChat].messages.length - 1].date.slice(0,
-                10);
-            hourLastMessageSent = this.contacts[activeChat].messages[this.contacts[activeChat].messages.length - 1].date.slice(11, 16);
+            const messagesArray = this.contacts[activeChat].messages;
+            const lastItemMessagesArray = messagesArray[messagesArray.length - 1];
+
+            dateLastMessageSent = lastItemMessagesArray.date.slice(0, 10); //return GG/MM/AAAA
+            hourLastMessageSent = lastItemMessagesArray.date.slice(11, 16); //return HH:MM
 
             /* console.log(dateLastMessageSent);
             console.log(hourLastMessageSent); */
 
-            /* console.log(this.nowDateInString().slice(0,
-                10)); */
+            /* console.log(this.nowDateInString().slice(0, 10)); */
 
             if (dateLastMessageSent == this.nowDateInString().slice(0,
                 10)) {
@@ -280,21 +281,6 @@ createApp({
                 date: dateStr,
                 message: quickReply,
                 status: 'received'
-            })
-        },
-
-        /**
-         * @returns {user.visible == true OR == false}
-         */
-        searchFilter() {
-            //console.log(this.addText);
-            this.contacts.filter((user) => {
-                const nameInLowerCase = user.name.toLowerCase()
-                if (!nameInLowerCase.includes(this.addText.toLowerCase())) {
-                    return user.visible = false //se non hanno la stringa diventano false
-                } else {
-                    return user.visible = true
-                }
             })
         },
 
@@ -416,4 +402,21 @@ createApp({
             chatSectionEl.classList.toggle('d-none')
         }
     },
+    computed: {
+        /**
+        * @returns {user.visible == true OR == false}
+        */
+        searchFilter() {
+            //console.log(this.addText);
+            this.contacts.forEach(user => {
+                const nameInLowerCase = user.name.toLowerCase();
+
+                if (!nameInLowerCase.includes(this.addText.toLowerCase())) {
+                    return user.visible = false //se non hanno la stringa diventano false
+                } else {
+                    return user.visible = true
+                }
+            });
+        },
+    }
 }).mount('#app')
