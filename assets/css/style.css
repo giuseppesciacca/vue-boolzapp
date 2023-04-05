@@ -40,9 +40,18 @@ header {
     background-color: var(--my_light);
 }
 
-.dark header {
+.dark header,
+.dark ul.dropdown-menu {
     background-color: var(--my_dark_secondary);
+}
+
+.dark header,
+.dark .dropdown-item {
     color: var(--my_light);
+}
+
+.dark .dropdown-item:hover {
+    background-color: var(--my_dark_active_chat);
 }
 
 header i {
