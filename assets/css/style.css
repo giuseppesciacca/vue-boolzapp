@@ -63,14 +63,15 @@ footer i {
     overflow-x: hidden;
 }
 
-.dark #contacts_chat h5 {
-    color: var(--my_light);
-}
-
 .dark #contacts_list {
     background-color: var(--my_dark_secondary);
 }
 
+.dark #contacts_chat h5 {
+    color: var(--my_light);
+}
+
+/* notification */
 .notification {
     height: 80px;
     background-color: var(--my_active_notification);
@@ -105,13 +106,20 @@ footer i {
     cursor: pointer;
 }
 
+/* /end notification */
+
+.modal-body,
 form {
-    height: 50px;
     background: var(--my_bg_form);
 }
 
+.dark .modal-body,
 .dark form {
     background: var(--my_dark_secondary);
+}
+
+form {
+    height: 50px;
 }
 
 span.input-group-text {
@@ -264,18 +272,3 @@ span.input-group-text i {
 }
 
 /* #endregion CHAT_SECTION */
-
-/* #region DEBUG */
-/* .debug .container {
-    background-color: red;
-} */
-
-/* .debug .col-4 {
-    background-color: blue;
-} */
-
-/* .debug .col-8 {
-    background-color: yellow;
-} */
-
-/* #endregion DEBUG */
