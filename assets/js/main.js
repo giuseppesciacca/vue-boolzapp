@@ -221,11 +221,11 @@ createApp({
                 10);
             hourLastMessageSent = this.contacts[activeChat].messages[this.contacts[activeChat].messages.length - 1].date.slice(11, 16);
 
-            console.log(dateLastMessageSent);
-            console.log(hourLastMessageSent);
+            /* console.log(dateLastMessageSent);
+            console.log(hourLastMessageSent); */
 
-            console.log(this.nowDateInString().slice(0,
-                10));
+            /* console.log(this.nowDateInString().slice(0,
+                10)); */
 
             if (dateLastMessageSent == this.nowDateInString().slice(0,
                 10)) {
