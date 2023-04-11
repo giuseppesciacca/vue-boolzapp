@@ -295,7 +295,7 @@ createApp({
          * @param {int} activeChat 
          */
         deleteMessage(message, activeChat) {
-            nIndex = this.contacts[activeChat].messages.indexOf(message); //risalgo all'indice nell'array del messaggio
+            const nIndex = this.contacts[activeChat].messages.indexOf(message); //risalgo all'indice nell'array del messaggio
 
             this.contacts[activeChat].messages.splice(nIndex, 1)
         },
@@ -333,6 +333,8 @@ createApp({
         deleteChat(activeChat) {
             this.contacts.splice(this.contacts[activeChat], 1);
             this.activeChat = -1;
+
+            this.backToList();
         },
 
         /**
@@ -387,9 +389,9 @@ createApp({
          * attiva disattiva dark mode
          */
         toggleDark() {
-            wrapperEl = document.getElementById('wrapper');
-            lightBtnEl = document.getElementById('light_mode');
-            darkBtnEl = document.getElementById('dark_mode');
+            const wrapperEl = document.getElementById('wrapper');
+            const lightBtnEl = document.getElementById('light_mode');
+            const darkBtnEl = document.getElementById('dark_mode');
 
             wrapperEl.classList.toggle('dark');
             lightBtnEl.classList.toggle('d-none');
@@ -400,8 +402,8 @@ createApp({
          * on mobile phone
          */
         backToList() {
-            contactsListEl = document.getElementById('contacts_list');
-            chatSectionEl = document.getElementById('chat_section');
+            const contactsListEl = document.getElementById('contacts_list');
+            const chatSectionEl = document.getElementById('chat_section');
 
             contactsListEl.classList.toggle('d-none')
             contactsListEl.classList.toggle('d-md-block')
@@ -442,10 +444,16 @@ createApp({
               */
         },
 
+        /**
+         * increase font size
+         */
         increaseFontSize() {
             this.fontSize = 5
         },
 
+        /**
+         * decrease font size
+         */
         decreaseFontSize() {
             this.fontSize = 6
         }

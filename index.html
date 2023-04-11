@@ -180,6 +180,7 @@
 
                         <header v-if="activeChat >= 0" class="d-flex align-items-center justify-content-between"
                             @click="closeEmoji">
+
                             <div id="user_chatting" class="d-flex align-items-center">
                                 <div class="ps-1 d-flex align-items-center" style="height: 75px" @click="backToList()">
                                     <i class="fa-solid fa-chevron-left d-md-none fa-fw"></i>
@@ -209,7 +210,7 @@
 
                                 <i class="fa-solid fa-paperclip pe-4 d-none d-lg-inline-block"></i>
 
-                                <div class="dropdown d-inline">
+                                <div class="dropdown dropstart d-inline">
                                     <button class="my_btn_dropdown" type="button" data-bs-toggle="dropdown">
                                         <i class="fa-solid fa-ellipsis-vertical pe-4"></i>
                                     </button>
