@@ -5,6 +5,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            showEmoji: false,
             lastAc: '',
             contactName: '',
             contactUrl: '',
@@ -192,8 +193,8 @@ createApp({
          * @param {int} index 
          */
         selectContact(index) {
-            contactsListEl = document.getElementById('contacts_list');
-            chatSectionEl = document.getElementById('chat_section');
+            const contactsListEl = document.getElementById('contacts_list');
+            const chatSectionEl = document.getElementById('chat_section');
 
             console.log('clicked', index);
             this.activeChat = index;
@@ -213,8 +214,8 @@ createApp({
             const messagesArray = this.contacts[activeChat].messages;
             const lastItemMessagesArray = messagesArray[messagesArray.length - 1];
 
-            dateLastMessageSent = lastItemMessagesArray.date.slice(0, 10); //return GG/MM/AAAA
-            hourLastMessageSent = lastItemMessagesArray.date.slice(11, 16); //return HH:MM
+            const dateLastMessageSent = lastItemMessagesArray.date.slice(0, 10); //return GG/MM/AAAA
+            const hourLastMessageSent = lastItemMessagesArray.date.slice(11, 16); //return HH:MM
 
             /* console.log(dateLastMessageSent);
             console.log(hourLastMessageSent); */
@@ -235,7 +236,7 @@ createApp({
          */
         sendMsg(activeChat) {
             /* ORA IN FORMATO GG/MM/AAAA HH:MM:SS */
-            dateStr = this.nowDateInString()
+            const dateStr = this.nowDateInString()
             console.log(dateStr);
 
             console.log(this.msg);
@@ -276,7 +277,7 @@ createApp({
          */
         autoMsg(activeChat) {
             /* ORA IN FORMATO GG/MM/AAAA HH:MM:SS */
-            dateStr = this.nowDateInString()
+            const dateStr = this.nowDateInString()
             const quickReply = this.quickReplies[Math.floor(Math.random() * this.quickReplies.length)]
 
             this.contacts[activeChat].messages.push({
@@ -403,6 +404,12 @@ createApp({
             contactsListEl.classList.toggle('d-none')
             contactsListEl.classList.toggle('d-md-block')
             chatSectionEl.classList.toggle('d-none')
+        },
+        openEmoji() {
+            this.showEmoji = true;
+        },
+        closeEmoji() {
+            this.showEmoji = false;
         },
         onSelectEmoji(emoji) {
             console.log(emoji)
