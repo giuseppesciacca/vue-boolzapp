@@ -327,6 +327,7 @@ createApp({
          */
         deleteChat(activeChat) {
             this.contacts.splice(this.contacts[activeChat], 1);
+            this.activeChat = -1;
         },
 
         /**
