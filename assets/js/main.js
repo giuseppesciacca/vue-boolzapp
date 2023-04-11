@@ -5,7 +5,8 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            showEmoji: false,
+            splashScreen: true,
+            showEmoji: true,
             lastAc: '',
             contactName: '',
             contactUrl: '',
@@ -405,12 +406,26 @@ createApp({
             contactsListEl.classList.toggle('d-md-block')
             chatSectionEl.classList.toggle('d-none')
         },
+
+        /**
+         * on click, change showEmoji value to true
+         */
         openEmoji() {
             this.showEmoji = true;
         },
+
+        /**
+         * on click, change showEmoji value to false
+         * 
+         */
         closeEmoji() {
             this.showEmoji = false;
         },
+
+        /**
+         * 
+         * @param {*} emoji 
+         */
         onSelectEmoji(emoji) {
             console.log(emoji)
             this.msg += emoji.i;
@@ -442,5 +457,13 @@ createApp({
                 }
             });
         },
+    },
+    mounted() {
+        /**
+         * set the splashScreen to false after 1second
+         */
+        setTimeout(() => {
+            this.splashScreen = false;
+        }, 1000)
     }
 }).component('Picker', Picker).mount('#app');

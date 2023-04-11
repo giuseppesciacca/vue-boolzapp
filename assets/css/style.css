@@ -64,6 +64,10 @@ footer i {
     scale: 1.5;
 }
 
+.splashScreen {
+    height: 100vh;
+}
+
 /* #endregion COMMON and Utilities */
 
 /* #region CONTACTS_LIST */

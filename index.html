@@ -23,7 +23,7 @@
 
     <div id="app">
 
-        <div id="wrapper" class="d-flex align-items-center">
+        <div id="wrapper" class="d-flex align-items-center" v-if="splashScreen == false">
             <div class="container">
                 <div class="row">
                     <div id="contacts_list" class="col-12 col-md-5 col-lg-4 p-0" @click="closeEmoji">
@@ -168,7 +168,6 @@
                     </div>
                     <!-- /#contacts_section -->
 
-
                     <div id="chat_section" class="col-12 d-md-block col-md-7 col-lg-8 p-0 d-none">
 
                         <header v-if="activeChat >= 0" class="d-flex align-items-center justify-content-between"
@@ -282,9 +281,13 @@
 
                 </div>
             </div>
+
         </div>
         <!-- /#wrapper -->
-
+        <div v-else class="d-flex align-items-center splashScreen justify-content-center flex-column">
+            <img class="img-fluid" src="./assets/img/mobile-logo.png" alt="">
+            <h1 class="fw-bold" style="color: #001533;">Boolzap</h1>
+        </div>
     </div>
     <!-- /#app -->
 
