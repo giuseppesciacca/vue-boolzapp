@@ -5,6 +5,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            fontSize: 6,
             splashScreen: true,
             showEmoji: true,
             lastAc: '',
@@ -440,6 +441,14 @@ createApp({
               }
               */
         },
+
+        increaseFontSize() {
+            this.fontSize = 5
+        },
+
+        decreaseFontSize() {
+            this.fontSize = 6
+        }
     },
     computed: {
         /**

@@ -23,7 +23,7 @@
 
     <div id="app">
 
-        <div id="wrapper" class="d-flex align-items-center" v-if="splashScreen == false">
+        <div id="wrapper" class="d-flex align-items-center" :class=`fs-${fontSize}` v-if="splashScreen == false">
             <div class="container">
                 <div class="row">
                     <div id="contacts_list" class="col-12 col-md-5 col-lg-4 p-0" @click="closeEmoji">
@@ -40,6 +40,14 @@
                             </div>
 
                             <div id="chat_menu">
+                                <i v-if="fontSize == 6"
+                                    class="fa-solid fa-magnifying-glass-plus pe-4 d-none d-lg-inline-block"
+                                    @click="increaseFontSize()"></i>
+
+                                <i v-if="fontSize !== 6"
+                                    class="fa-solid fa-magnifying-glass-minus pe-4 d-none d-lg-inline-block"
+                                    @click="decreaseFontSize()"></i>
+
                                 <i class="fa-solid fa-circle-notch pe-4 d-none d-lg-inline-block"></i>
 
                                 <i class="fa-solid fa-message pe-4" data-bs-toggle="modal"
@@ -283,11 +291,12 @@
             </div>
 
         </div>
-        <!-- /#wrapper -->
+
         <div v-else class="d-flex align-items-center splashScreen justify-content-center flex-column">
             <img class="img-fluid" src="./assets/img/mobile-logo.png" alt="">
             <h1 class="fw-bold" style="color: #001533;">Boolzap</h1>
         </div>
+        <!-- /#wrapper -->
     </div>
     <!-- /#app -->
 
