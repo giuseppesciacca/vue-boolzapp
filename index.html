@@ -169,7 +169,7 @@
 
                     <div id="chat_section" class="col-12 d-md-block col-md-7 col-lg-8 p-0 d-none">
 
-                        <header class="d-flex align-items-center justify-content-between">
+                        <header v-if="activeChat >= 0" class="d-flex align-items-center justify-content-between">
                             <div id="user_chatting" class="d-flex align-items-center">
                                 <div class="ps-1 d-flex align-items-center" style="height: 75px" @click="backToList()">
                                     <i class="fa-solid fa-chevron-left d-md-none fa-fw"></i>
@@ -219,7 +219,7 @@
                         </header>
                         <!-- /header chat -->
 
-                        <main class="d-flex flex-column">
+                        <main v-if="activeChat >= 0" class="d-flex flex-column">
                             <div v-for="message in contacts[activeChat].messages"
                                 :class="message.status === 'sent' ? 'sent' : 'received'" class="message">
                                 <p class="me-3">
@@ -243,9 +243,18 @@
 
 
                         </main>
+
+                        <main v-else class="d-flex flex-column h-100">
+                            <div class="d-flex align-items-center justify-content-center h-100">
+                                <div class="text-center v_else_main_text">
+                                    <h5>BOOLZAP</h5>
+                                    <p>Invia e ricevi messaggi</p>
+                                </div>
+                            </div>
+                        </main>
                         <!-- /main chat -->
 
-                        <footer class="d-flex align-items-center">
+                        <footer v-if="activeChat >= 0" class="d-flex align-items-center">
                             <div class="col-1 d-flex justify-content-center">
                                 <i class="fa-regular fa-face-smile"></i>
                             </div>

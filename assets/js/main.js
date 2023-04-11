@@ -7,7 +7,7 @@ createApp({
             contactName: '',
             contactUrl: '',
             date: new Date(),
-            activeChat: 0,
+            activeChat: -1,
             msg: '',
             addText: '',
             date: new Date(),

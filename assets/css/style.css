@@ -195,6 +195,10 @@ span.input-group-text i {
     overflow-y: auto;
 }
 
+.dark #chat_section .v_else_main_text {
+    color: var(--my_light);
+}
+
 .dark #chat_section main {
     background-image: url(../img/dark_bg.jpg);
 }
