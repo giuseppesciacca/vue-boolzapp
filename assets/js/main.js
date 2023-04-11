@@ -1,3 +1,5 @@
+import Picker from './emoji-picker.js';
+
 const { createApp } = Vue
 
 createApp({
@@ -401,7 +403,21 @@ createApp({
             contactsListEl.classList.toggle('d-none')
             contactsListEl.classList.toggle('d-md-block')
             chatSectionEl.classList.toggle('d-none')
-        }
+        },
+        onSelectEmoji(emoji) {
+            console.log(emoji)
+            this.msg += emoji.i;
+            /*
+              // result
+              { 
+                  i: "😚", 
+                  n: ["kissing face"], 
+                  r: "1f61a", // with skin tone
+                  t: "neutral", // skin tone
+                  u: "1f61a" // without tone
+              }
+              */
+        },
     },
     computed: {
         /**
@@ -420,4 +436,4 @@ createApp({
             });
         },
     }
-}).mount('#app')
+}).component('Picker', Picker).mount('#app');
