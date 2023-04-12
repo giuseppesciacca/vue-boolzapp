@@ -15,7 +15,6 @@ createApp({
             activeChat: -1,
             msg: '',
             addText: '',
-            date: new Date(),
             contacts: [
                 {
                     name: 'Michele',
@@ -238,8 +237,9 @@ createApp({
          */
         sendMsg(activeChat) {
             /* ORA IN FORMATO GG/MM/AAAA HH:MM:SS */
+            this.date = new Date()
             const dateStr = this.nowDateInString()
-            //console.log(dateStr);
+            console.log(dateStr);
 
             //console.log(this.msg);
             if (this.msg.length > 0) {
@@ -271,8 +271,8 @@ createApp({
                 setTimeout(() => {
                     this.lastAc = this.lastAccess(activeChat);
                 }, 3000)
-
             }, 1000)
+            this.lastAc = '';
         },
 
         /**
@@ -281,6 +281,7 @@ createApp({
          */
         autoMsg(activeChat) {
             /* ORA IN FORMATO GG/MM/AAAA HH:MM:SS */
+            this.date = new Date()
             const dateStr = this.nowDateInString()
             const quickReply = this.quickReplies[Math.floor(Math.random() * this.quickReplies.length)]
 
