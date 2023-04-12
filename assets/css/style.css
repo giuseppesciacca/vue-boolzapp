@@ -292,6 +292,23 @@ span.input-group-text i {
     font-size: 10px;
 }
 
+.dark .v3-emoji-picker .v3-footer,
+.v3-emoji-picker .v3-header,
+.v3-emoji-picker .v3-body,
+.v3-emoji-picker .v3-search input,
+.v3-emoji-picker .v3-body .v3-body-inner .v3-group h5.v3-sticky,
+.v3-emoji-picker .v3-footer .v3-foot-left>span.v3-text,
+.v3-emoji-picker .v3-footer .v3-tone>span:first-child,
+.v3-emoji-picker .v3-footer .v3-foot-left>span:first-child {
+    background-color: var(--my_dark_active_chat);
+    color: var(--my_light);
+}
+
+.dark .v3-emoji-picker .v3-body .v3-body-inner .v3-group .v3-emojis button span,
+.v3-emoji-picker .v3-body .v3-body-inner .v3-group .v3-emojis button img:hover {
+    background-color: var(--my_dark_secondary);
+}
+
 .dark #chat_section footer input {
     background-color: var(--my_dark_secondary);
     color: var(--my_light);
