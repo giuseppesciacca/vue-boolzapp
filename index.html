@@ -232,7 +232,8 @@
                         </header>
                         <!-- /header chat -->
 
-                        <main v-if="activeChat >= 0" class="d-flex flex-column" @click="closeEmoji">
+                        <main v-if="activeChat >= 0" class="d-flex flex-column" @click="closeEmoji"
+                            ref='messageDisplay'>
                             <div v-for="message in contacts[activeChat].messages"
                                 :class="message.status === 'sent' ? 'sent' : 'received'" class="message">
                                 <p class="me-3">

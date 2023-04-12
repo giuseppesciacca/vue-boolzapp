@@ -198,7 +198,7 @@ createApp({
             const contactsListEl = document.getElementById('contacts_list');
             const chatSectionEl = document.getElementById('chat_section');
 
-            console.log('clicked', index);
+            //console.log('clicked', index);
             this.activeChat = index;
 
             contactsListEl.classList.toggle('d-none')
@@ -239,9 +239,9 @@ createApp({
         sendMsg(activeChat) {
             /* ORA IN FORMATO GG/MM/AAAA HH:MM:SS */
             const dateStr = this.nowDateInString()
-            console.log(dateStr);
+            //console.log(dateStr);
 
-            console.log(this.msg);
+            //console.log(this.msg);
             if (this.msg.length > 0) {
                 this.contacts[activeChat].messages.push({
                     date: dateStr,
@@ -253,6 +253,8 @@ createApp({
 
                 this.modifyLastAccess(activeChat)
             }
+
+            this.scrollToBottom();
         },
 
         /**
@@ -287,6 +289,8 @@ createApp({
                 message: quickReply,
                 status: 'received'
             })
+
+            this.scrollToBottom();
         },
 
         /**
@@ -456,6 +460,16 @@ createApp({
          */
         decreaseFontSize() {
             this.fontSize = 6
+        },
+
+        /**
+         * when a new message is sent the chat scrolls down
+         */
+        scrollToBottom() {
+            this.$nextTick(function () {
+                const chat = this.$refs.messageDisplay;
+                chat.scrollTop = chat.scrollHeight;
+            });
         }
     },
     computed: {
@@ -482,5 +496,5 @@ createApp({
         setTimeout(() => {
             this.splashScreen = false;
         }, 1000)
-    }
+    },
 }).component('Picker', Picker).mount('#app');
