@@ -23,7 +23,7 @@
 
     <div id="app">
 
-        <div id="wrapper" class="d-flex align-items-center" :class=`fs-${fontSize}` v-if="splashScreen == false">
+        <div id="wrapper" class="d-flex align-items-center" :class="`fs-${fontSize}`" v-if="splashScreen == false">
             <div class="container">
                 <div class="row">
                     <div id="contacts_list" class="col-12 col-md-5 col-lg-4 p-0" @click="closeEmoji">
@@ -144,7 +144,8 @@
                                     @click="selectContact(index)">
                                     <div class="ps-3">
                                         <img class="rounded-5" width="50" :src="'./assets/'+ contact.avatar"
-                                            :alt="getFirstLetters(contact.name)">
+                                            :alt="getFirstLetters(contact.name)"
+                                            onerror="this.onerror=null; this.src='./assets/img/user.jpg'">
                                     </div>
 
                                     <div class="ps-3 flex-grow-1">
@@ -188,7 +189,8 @@
                                 <div class="ps-3">
                                     <img class="img-fluid rounded-5" width="50"
                                         :src="'./assets/'+ contacts[activeChat].avatar"
-                                        :alt="getFirstLetters(contacts[activeChat].name)">
+                                        :alt="getFirstLetters(contacts[activeChat].name)"
+                                        onerror="this.onerror=null; this.src='./assets/img/user.jpg'">
                                 </div>
                                 <div class="ps-3">
                                     <h5 class="m-0">{{contacts[activeChat].name}} </h5>
