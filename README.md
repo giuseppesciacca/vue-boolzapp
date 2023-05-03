@@ -1,6 +1,6 @@
 # Boolzapp
 
-Utilizzo di vue-3, bootstrap.
+Replica di una web app di messaggistica in stile WhatsApp con utilizzo di vue-3, bootstrap.
 
 # Funzionalità:
 
