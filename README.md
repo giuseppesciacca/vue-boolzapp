@@ -32,7 +32,7 @@ Utilizzo di vue-3, bootstrap.
 
 ● Scroll in giù in automatico fino al messaggio più recente, quando viene aggiunto un nuovo messaggio alla conversazione;
 
-● Aggiunta delle emoticons, tramite l'utilizzo di una libreria, ad esempio: https://www.npmjs.com/package/vue-emoji-picker;
+● Aggiunta delle emoticons tramite l'utilizzo di una libreria;
 
 # Grafica: 
 
